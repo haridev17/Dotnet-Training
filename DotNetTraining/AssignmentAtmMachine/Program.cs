@@ -56,13 +56,13 @@ void Withdrawal()
 void UserChoice()
 {
     
-    Console.WriteLine("********Welcome to RBI ATM **************\n");
+    Console.WriteLine("********Welcome to RBI ATM **************");
     Console.WriteLine("Enter your choice");
-    Console.WriteLine("1. Check Balance: Press 1\n");
-    Console.WriteLine("2. Withdraw Cash: Press 2\n");
-    Console.WriteLine("3. Deposit Cash: Press 3\n");
-    Console.WriteLine("4. Quit: Press 4\n");
-    Console.WriteLine("*********************************************\n\n");
+    Console.WriteLine("1. Check Balance: Press 1");
+    Console.WriteLine("2. Withdraw Cash: Press 2");
+    Console.WriteLine("3. Deposit Cash: Press 3");
+    Console.WriteLine("4. Quit: Press 4");
+    Console.WriteLine("*********************************************");
     options = Convert.ToInt32(Console.ReadLine());
 }
 try
