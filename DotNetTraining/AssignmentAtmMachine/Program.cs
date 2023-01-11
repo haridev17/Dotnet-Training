@@ -1,22 +1,41 @@
-﻿int cardNumber = 987654;
-int pin = 0123;
-int choice = 0;
-int balance = 1000;
-int deposit = 0;
-int withdrawal = 0;
-
+﻿int balance = 1000;
+int options = 0;
 
 void CheckBalance()
 {
     Console.WriteLine($"Your balance is:{balance} ");
 }
 
+bool CheckCredentials()
+{
+    int cardNumber = 987654;
+    int pin = 0123;
+    int inputCardNumber = 0;
+    int inputPin = 0;
+
+    Console.WriteLine("Enter Your Card Number ");
+    inputCardNumber = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter Your Pin Number ");
+    inputPin = Convert.ToInt32(Console.ReadLine());
+
+    if (inputCardNumber == cardNumber && pin == inputPin)
+    { 
+        return true;
+    }
+
+    else 
+    {
+        return false;
+    }
+
+}
 void ThankYou()
 {
     Console.WriteLine("Thank you for using our atm ");
 }
 void Deposit()
 {
+    int deposit = 0;
     Console.WriteLine("Enter amount to be deposited ");
     deposit = Convert.ToInt32(Console.ReadLine());
     balance += deposit;
@@ -26,6 +45,7 @@ void Deposit()
 
 void Withdrawal()
 {
+    int withdrawal = 0;
     Console.WriteLine("Enter amount to be withdrawn");
     withdrawal = Convert.ToInt32(Console.ReadLine());
     if (withdrawal > balance)
@@ -36,7 +56,6 @@ void Withdrawal()
     else
     {
        balance -= withdrawal;
-
     }
     ThankYou();
     CheckBalance();
@@ -44,6 +63,7 @@ void Withdrawal()
 
 void UserChoice()
 {
+    
     Console.WriteLine("********Welcome to RBI ATM **************\n");
     Console.WriteLine("Enter your choice");
     Console.WriteLine("1. Check Balance: Press 1\n");
@@ -51,23 +71,18 @@ void UserChoice()
     Console.WriteLine("3. Deposit Cash: Press 3\n");
     Console.WriteLine("4. Quit: Press 4\n");
     Console.WriteLine("*********************************************\n\n");
-    choice = Convert.ToInt32(Console.ReadLine());
+    options = Convert.ToInt32(Console.ReadLine());
 }
 try
 {
-    Console.WriteLine("Enter Your Card Number ");
-    cardNumber = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Enter Your Pin Number ");
-    pin = Convert.ToInt32(Console.ReadLine());
 
-
-    if (cardNumber == 987654 && pin == 0123)
+    if (CheckCredentials())
     {
-
-        while (choice != 4)
+        
+        while(options != 4)
         {
             UserChoice();
-            switch (choice)
+            switch (options)
             {
                 case 1:
                     CheckBalance();
