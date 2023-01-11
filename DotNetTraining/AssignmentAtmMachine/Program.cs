@@ -18,15 +18,7 @@ bool CheckCredentials()
     Console.WriteLine("Enter Your Pin Number ");
     inputPin = Convert.ToInt32(Console.ReadLine());
 
-    if (inputCardNumber == cardNumber && pin == inputPin)
-    { 
-        return true;
-    }
-
-    else 
-    {
-        return false;
-    }
+    return inputCardNumber == cardNumber && pin == inputPin;
 
 }
 void ThankYou()
@@ -95,6 +87,9 @@ try
                     break;
                 case 4:
                     ThankYou();
+                    break;
+                default:
+                    Console.WriteLine("Inalid Choice ");
                     break;
             }
         }
