@@ -1,4 +1,4 @@
-﻿namespace FrenchDeck
+﻿namespace ConsoleApplication1
 {
     class Deck
     {
@@ -42,5 +42,11 @@
 
             }
         }
+
+	  public void SortDeck()
+    {
+        _cards.Sort(new CardComparer());
+    }
+
     }
 }
